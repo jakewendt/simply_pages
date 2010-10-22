@@ -58,9 +58,6 @@ Rails::Initializer.run do |config|
 		config.gem "sqlite3-ruby", :lib => "sqlite3"
 	end
 	
-#	config.action_mailer.default_url_options = { 
-#		:host => "localhost:3000" }
-
 end
 require 'user'
 user=User.find_create_and_update_by_uid('859908')
