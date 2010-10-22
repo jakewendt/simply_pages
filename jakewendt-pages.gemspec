@@ -4,8 +4,8 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{jakewendt-ccls_engine}
-  s.version = "0.1.0"
+  s.name = %q{jakewendt-pages}
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
      "lib/pages/redcloth/formatters/html.rb",
      "lib/pages/tasks.rb"
   ]
-  s.homepage = %q{http://github.com/jakewendt/ucb_ccls_engine}
+  s.homepage = %q{http://github.com/jakewendt/pages}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
@@ -68,14 +68,10 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<jakewendt-rails_helpers>, [">= 0"])
       s.add_runtime_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
       s.add_runtime_dependency(%q<jakewendt-authorized>, [">= 0"])
-      s.add_runtime_dependency(%q<chronic>, [">= 0"])
       s.add_runtime_dependency(%q<ruby-hmac>, [">= 0"])
-      s.add_runtime_dependency(%q<aws-s3>, [">= 0"])
       s.add_runtime_dependency(%q<ssl_requirement>, [">= 0"])
       s.add_runtime_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-      s.add_runtime_dependency(%q<gravatar>, [">= 0"])
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
-      s.add_runtime_dependency(%q<paperclip>, [">= 0"])
       s.add_runtime_dependency(%q<thoughtbot-factory_girl>, [">= 0"])
       s.add_runtime_dependency(%q<jakewendt-assert_this_and_that>, [">= 0"])
       s.add_runtime_dependency(%q<jakewendt-calnet_authenticated>, [">= 0"])
@@ -91,14 +87,10 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jakewendt-rails_helpers>, [">= 0"])
       s.add_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
       s.add_dependency(%q<jakewendt-authorized>, [">= 0"])
-      s.add_dependency(%q<chronic>, [">= 0"])
       s.add_dependency(%q<ruby-hmac>, [">= 0"])
-      s.add_dependency(%q<aws-s3>, [">= 0"])
       s.add_dependency(%q<ssl_requirement>, [">= 0"])
       s.add_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-      s.add_dependency(%q<gravatar>, [">= 0"])
       s.add_dependency(%q<RedCloth>, [">= 0"])
-      s.add_dependency(%q<paperclip>, [">= 0"])
       s.add_dependency(%q<thoughtbot-factory_girl>, [">= 0"])
       s.add_dependency(%q<jakewendt-assert_this_and_that>, [">= 0"])
       s.add_dependency(%q<jakewendt-calnet_authenticated>, [">= 0"])
@@ -115,14 +107,10 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jakewendt-rails_helpers>, [">= 0"])
     s.add_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
     s.add_dependency(%q<jakewendt-authorized>, [">= 0"])
-    s.add_dependency(%q<chronic>, [">= 0"])
     s.add_dependency(%q<ruby-hmac>, [">= 0"])
-    s.add_dependency(%q<aws-s3>, [">= 0"])
     s.add_dependency(%q<ssl_requirement>, [">= 0"])
     s.add_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-    s.add_dependency(%q<gravatar>, [">= 0"])
     s.add_dependency(%q<RedCloth>, [">= 0"])
-    s.add_dependency(%q<paperclip>, [">= 0"])
     s.add_dependency(%q<thoughtbot-factory_girl>, [">= 0"])
     s.add_dependency(%q<jakewendt-assert_this_and_that>, [">= 0"])
     s.add_dependency(%q<jakewendt-calnet_authenticated>, [">= 0"])
