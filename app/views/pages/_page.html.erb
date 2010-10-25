@@ -3,7 +3,6 @@
 <%= image_tag 'drag.gif', :class => 'handle' %></td>
 <td class='position'><%= page.position -%></td>
 
-
 <td><table><tbody><tr>
 <td class='path'>
 <%= link_to page.path, 
@@ -20,9 +19,6 @@
 <%= link_to "Order", pages_path(:parent_id => page.id) -%>&nbsp;
 <% end %>
 <%= button_link_to "Edit", edit_page_path(page) -%>&nbsp;
-<%#= link_to "Destroy", page_path(page), 
-	:confirm => "Delete '#{page.title(session[:locale])}'?\nAre you sure?", 
-	:method => :delete -%>
 <% destroy_link_to "Destroy", page_path(page) do %>
 <%= hidden_field_tag 'confirm', "Destroy page '#{page}'?", 
 	:id => nil %>

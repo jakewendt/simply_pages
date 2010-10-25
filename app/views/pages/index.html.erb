@@ -13,7 +13,7 @@ Sorry, no pages yet.
 <% form_tag(order_pages_path, :method => :post, :id => 'order_pages') do -%>
 <%= hidden_field_tag :parent_id, params[:parent_id] %>
 <p>
-<%= link_to "Create new page", 
+<%= button_link_to "Create new page", 
 	new_page_path(:parent_id => params[:parent_id]) -%>
 <%= submit_tag 'Save page order', :name => nil, :id => 'save_order' %>
 </p>
