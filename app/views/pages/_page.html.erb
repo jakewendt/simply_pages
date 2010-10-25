@@ -19,11 +19,14 @@
 <% if page.children.length > 1 %>
 <%= link_to "Order", pages_path(:parent_id => page.id) -%>&nbsp;
 <% end %>
-<%= link_to "Edit", edit_page_path(page) -%>&nbsp;
-<%= link_to "Destroy", page_path(page), 
+<%= button_link_to "Edit", edit_page_path(page) -%>&nbsp;
+<%#= link_to "Destroy", page_path(page), 
 	:confirm => "Delete '#{page.title(session[:locale])}'?\nAre you sure?", 
 	:method => :delete -%>
-<%#= destroy_link_to "Destroy", page_path(page) -%>
+<% destroy_link_to "Destroy", page_path(page) do %>
+<%= hidden_field_tag 'confirm', "Destroy page '#{page}'?", 
+	:id => nil %>
+<% end %>
 </td>
 </tr>
 
