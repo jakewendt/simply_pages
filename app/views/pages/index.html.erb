@@ -2,8 +2,6 @@
 <% stylesheets('pages') %>
 
 <h4>Pages:</h4>
-<% form_tag(order_pages_path, :method => :post, :id => 'order_pages') do -%>
-<%= hidden_field_tag :parent_id, params[:parent_id] %>
 <% unless @pages.empty? %>
 <table id='pages'><tbody>
 <%= render :partial => 'page', :collection => @pages %>
@@ -12,12 +10,13 @@
 Sorry, no pages yet.
 <% end %>
 
+<% form_tag(order_pages_path, :method => :post, :id => 'order_pages') do -%>
+<%= hidden_field_tag :parent_id, params[:parent_id] %>
 <p>
 <%= link_to "Create new page", 
 	new_page_path(:parent_id => params[:parent_id]) -%>
 <%= submit_tag 'Save page order', :name => nil, :id => 'save_order' %>
 </p>
-
 <% end %>
 <p>
 The page model is used as a Content Management System 
