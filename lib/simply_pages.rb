@@ -1,8 +1,8 @@
 require 'ruby_extension'
 require 'rails_helpers'
-require 'authorized'
 require 'gravatar'
 require 'calnet_authenticated'
+require 'simply_authorized'
 require 'acts_as_list'
 module SimplyPages
 #	predefine namespace
