@@ -45,6 +45,10 @@ class Page < ActiveRecord::Base
 
 	before_validation :adjust_path
 
+	def to_s
+		title
+	end
+
 	def adjust_path
 		unless self.path.nil?
 			#	remove any duplicate /'s
