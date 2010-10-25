@@ -4,7 +4,7 @@ require 'authorized'
 require 'gravatar'
 require 'calnet_authenticated'
 require 'acts_as_list'
-module Pages
+module SimplyPages
 #	predefine namespace
 end
 
@@ -19,15 +19,15 @@ HTML::WhiteListSanitizer.allowed_attributes.merge(%w(
 	id class style
 ))
 
-require 'pages/redcloth/formatters/html'
+require 'simply_pages/redcloth/formatters/html'
 
 if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
 	require 'active_support'
 	require 'active_support/test_case'
 	require 'factory_girl'
 	require 'assert_this_and_that'
-	require 'pages/factories'
-	require 'pages/pending'
+	require 'simply_pages/factories'
+	require 'simply_pages/pending'
 end
 
 ActionController::Routing::Routes.add_configuration_file(

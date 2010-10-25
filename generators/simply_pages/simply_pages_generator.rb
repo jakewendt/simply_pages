@@ -1,4 +1,4 @@
-class PagesGenerator < Rails::Generator::Base
+class SimplyPagesGenerator < Rails::Generator::Base
 
 	def manifest
 		#	See Rails::Generator::Commands::Create

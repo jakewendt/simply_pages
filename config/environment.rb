@@ -19,14 +19,14 @@ Rails::Initializer.run do |config|
 	config.gem 'jakewendt-calnet_authenticated',
 		:lib => 'calnet_authenticated'
 
-	config.gem 'jakewendt-authorized',
-		:lib => 'authorized'
+	config.gem 'jakewendt-simply_authorized',
+		:lib => 'simply_authorized'
 
 	config.plugin_paths = [
 		File.expand_path(File.join(File.dirname(__FILE__),'../..')),
 		File.expand_path(File.join(File.dirname(__FILE__),'../../..','peter'))
 	]
-	config.plugins = [:pages,
+	config.plugins = [:simply_pages,
 		:html_test, :html_test_extension]
 
 	config.frameworks -= [:active_resource]

@@ -1,4 +1,4 @@
-= Pages
+= SimplyPages
 
 This is both a plugin engine and a basic rails app.
 
