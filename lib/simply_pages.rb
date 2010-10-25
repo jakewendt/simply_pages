@@ -1,5 +1,6 @@
+require 'active_support'
 require 'ruby_extension'
-require 'rails_helpers'
+require 'simply_helpful'
 require 'gravatar'
 require 'calnet_authenticated'
 require 'simply_authorized'
@@ -22,7 +23,6 @@ HTML::WhiteListSanitizer.allowed_attributes.merge(%w(
 require 'simply_pages/redcloth/formatters/html'
 
 if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
-	require 'active_support'
 	require 'active_support/test_case'
 	require 'factory_girl'
 	require 'assert_this_and_that'
