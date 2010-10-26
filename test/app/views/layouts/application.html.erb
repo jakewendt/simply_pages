@@ -3,17 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<title><%= @page_title || "Pages Demo App" -%></title>
-<%= javascript_include_tag 'jquery','jquery-ui','jrails','ucb_ccls_engine' %>
-<%= stylesheet_link_tag 'pages','page','shared','authorized' %>
+<title><%= @page_title || "Simply Pages Demo App" -%></title>
+<%= javascript_include_tag 'jquery','jquery-ui','jrails','simply_helpful' %>
+<%= stylesheet_link_tag 'application','pages','page','shared','authorized' %>
 <%= yield :head %>
 </head>
 <body>
+<center><h1>Simply Pages Demo App</h1></center>
 <div id='container'>
+<div id='menu'>
+<% Page.roots.each do |page| %>
+<%= link_to page.menu, page.path %>
+<% end %>
+<%= link_to "Pages", pages_path %>
+</div>
 <div id='content'>
 <%= flasher() %>
 <%= yield %>
-<%= link_to "Pages", pages_path %>
 <%= aws_image_tag('three_bears.jpg',:style => "width:100%;") %>
 </div><!-- content -->
 </div><!-- container -->
