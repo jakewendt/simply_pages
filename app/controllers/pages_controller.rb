@@ -29,8 +29,13 @@ class PagesController < ApplicationController
 #		params[:pages].reverse.each { |id| Page.find(id).move_to_top }
 #	this doesn't even check for parents or anything
 #	making it faster, but potentially error prone.
-		params[:pages].each_with_index { |id,index| 
-			Page.find(id).update_attribute(:position, index+1 ) }
+
+		if params[:pages] && params[:pages].is_a?(Array)
+			params[:pages].each_with_index { |id,index| 
+				Page.find(id).update_attribute(:position, index+1 ) }
+		else
+			flash[:error] = "No page order given!"
+		end
 		redirect_to pages_path(:parent_id=>params[:parent_id])
 	end
 
