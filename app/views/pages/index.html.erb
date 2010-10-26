@@ -14,7 +14,7 @@ Sorry, no pages yet.
 <%= hidden_field_tag :parent_id, params[:parent_id] %>
 <p>
 <%= button_link_to "Create new page", 
-	new_page_path(:parent_id => params[:parent_id]) -%>
+	new_page_path(:parent_id => params[:parent_id]) -%>&nbsp;
 <%= submit_tag 'Save page order', :name => nil, :id => 'save_order' %>
 </p>
 <% end %>
