@@ -17,7 +17,6 @@ This is both a plugin engine and a basic rails app.
 * {jakewendt-assert_this_and_that}[http://github.com/jakewendt/assert_this_and_that]
 * {jakewendt-ruby_extension}[http://github.com/jakewendt/ruby_extension] - modifications, updates and patches for ruby.
 * rails ~> 2
-* i18n =0.3.7
 * jrails
 * chronic
 * ruby-hmac
