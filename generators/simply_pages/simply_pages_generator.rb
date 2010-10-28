@@ -6,6 +6,21 @@ class SimplyPagesGenerator < Rails::Generator::Base
 		#	for code methods for record (Manifest)
 		record do |m|
 
+#			m.gsub_file 'Rakefile', /\z/mi do |match|
+#				<<-EOF
+##	Hi There
+#require 'simply_pages/test_tasks'
+##	Good bye
+#				EOF
+#			end
+			File.open('Rakefile','a'){|f| 
+				f.puts <<-EOF
+#	Hi There
+require 'simply_pages/test_tasks'
+#	Good bye
+				EOF
+			}
+
 			%w( create_pages ).each do |migration|
 				m.migration_template "migrations/#{migration}.rb",
 					'db/migrate', :migration_file_name => migration
@@ -21,16 +36,16 @@ class SimplyPagesGenerator < Rails::Generator::Base
 				f = file.split('/').slice(-2,2).join('/')
 				m.file(f, "public/stylesheets/#{File.basename(file)}")
 			}
-			m.directory('test/functional/pages')
-			Dir["#{File.dirname(__FILE__)}/templates/functional/*rb"].each{|file| 
-				f = file.split('/').slice(-2,2).join('/')
-				m.file(f, "test/functional/pages/#{File.basename(file)}")
-			}
-			m.directory('test/unit/pages')
-			Dir["#{File.dirname(__FILE__)}/templates/unit/*rb"].each{|file| 
-				f = file.split('/').slice(-2,2).join('/')
-				m.file(f, "test/unit/pages/#{File.basename(file)}")
-			}
+#			m.directory('test/functional/pages')
+#			Dir["#{File.dirname(__FILE__)}/templates/functional/*rb"].each{|file| 
+#				f = file.split('/').slice(-2,2).join('/')
+#				m.file(f, "test/functional/pages/#{File.basename(file)}")
+#			}
+#			m.directory('test/unit/pages')
+#			Dir["#{File.dirname(__FILE__)}/templates/unit/*rb"].each{|file| 
+#				f = file.split('/').slice(-2,2).join('/')
+#				m.file(f, "test/unit/pages/#{File.basename(file)}")
+#			}
 		end
 	end
 
