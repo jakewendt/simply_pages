@@ -1,4 +1,5 @@
-require File.dirname(__FILE__) + '/../../test_helper'
+#require File.dirname(__FILE__) + '/../../test_helper'
+require 'test_helper'
 
 class SimplyPages::PageTest < ActiveSupport::TestCase
 

@@ -6,18 +6,17 @@ class SimplyPagesGenerator < Rails::Generator::Base
 		#	for code methods for record (Manifest)
 		record do |m|
 
-#			m.gsub_file 'Rakefile', /\z/mi do |match|
-#				<<-EOF
-##	Hi There
-#require 'simply_pages/test_tasks'
-##	Good bye
-#				EOF
-#			end
 			File.open('Rakefile','a'){|f| 
 				f.puts <<-EOF
-#	Hi There
+#	From script/generate simply_pages ...
 require 'simply_pages/test_tasks'
-#	Good bye
+				EOF
+			}
+
+			File.open('.autotest','a'){|f| 
+				f.puts <<-EOF
+#	From script/generate simply_pages ...
+require 'simply_pages/autotest'
 				EOF
 			}
 
