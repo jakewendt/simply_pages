@@ -8,14 +8,14 @@ class SimplyPagesGenerator < Rails::Generator::Base
 
 			File.open('Rakefile','a'){|f| 
 				f.puts <<-EOF
-#	From script/generate simply_pages ...
+#	From `script/generate simply_pages` ...
 require 'simply_pages/test_tasks'
 				EOF
 			}
 
 			File.open('.autotest','a'){|f| 
 				f.puts <<-EOF
-#	From script/generate simply_pages ...
+#	From `script/generate simply_pages` ...
 require 'simply_pages/autotest'
 				EOF
 			}
