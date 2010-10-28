@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.0.4"
+  s.version = "1.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2010-10-27}
+  s.date = %q{2010-10-28}
   s.description = %q{longer description of your gem}
   s.email = %q{github@jake.otherinbox.com}
   s.extra_rdoc_files = [
@@ -44,13 +44,27 @@ Gem::Specification.new do |s|
      "lib/simply_pages/factories.rb",
      "lib/simply_pages/pending.rb",
      "lib/simply_pages/redcloth/formatters/html.rb",
-     "lib/simply_pages/tasks.rb"
+     "lib/simply_pages/tasks.rb",
+     "lib/simply_pages/test_tasks.rb"
   ]
   s.homepage = %q{http://github.com/jakewendt/simply_pages}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{one-line summary of your gem}
+  s.test_files = [
+    "test/app/controllers/application_controller.rb",
+     "test/app/models/user.rb",
+     "test/config/routes.rb",
+     "test/functional/authorized/roles_controller_test.rb",
+     "test/functional/engine_pages_controller_test.rb",
+     "test/functional/pages/locales_controller_test.rb",
+     "test/functional/pages/pages_controller_test.rb",
+     "test/test_helper.rb",
+     "test/unit/authorized/role_test.rb",
+     "test/unit/pages/page_test.rb",
+     "test/unit/pages/redcloth_extension_test.rb"
+  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION

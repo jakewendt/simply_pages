@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/../../test_helper'
+#require File.dirname(__FILE__) + '/../../test_helper'
+#	don't use absolute path
+require 'test_helper'
 
 class SimplyPages::RedClothExtensionTest < ActiveSupport::TestCase
 

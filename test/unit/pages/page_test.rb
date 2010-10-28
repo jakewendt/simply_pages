@@ -1,4 +1,6 @@
-require File.dirname(__FILE__) + '/../../test_helper'
+#require File.dirname(__FILE__) + '/../../test_helper'
+#	don't use absolute path so can directly test in app
+require 'test_helper'
 
 class SimplyPages::PageTest < ActiveSupport::TestCase
 
