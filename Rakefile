@@ -79,3 +79,7 @@ begin
 rescue LoadError
 	puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
+#	From `script/generate simply_authorized` ...
+require 'simply_authorized/test_tasks'
+#	From `script/generate simply_helpful` ...
+require 'simply_helpful/test_tasks'
