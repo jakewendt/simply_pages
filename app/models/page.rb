@@ -18,10 +18,14 @@ class Page < ActiveRecord::Base
 	acts_as_list :scope => :parent_id
 #	acts_as_list :scope => "parent_id \#{(parent_id.nil?)?'IS NULL':'= parent_id'} AND locale = '\#{locale}'"
 
+	validates_presence_of :path
 	validates_length_of :path,  :minimum => 1
 	validates_format_of :path,  :with => /^\//
+	validates_presence_of :menu_en
 	validates_length_of :menu_en,  :minimum => 4
+	validates_presence_of :title_en
 	validates_length_of :title_en, :minimum => 4
+	validates_presence_of :body_en
 	validates_length_of :body_en,  :minimum => 4
 	validates_uniqueness_of :menu_en
 	validates_uniqueness_of :path
