@@ -1,4 +1,5 @@
 #require File.dirname(__FILE__) + '/../../test_helper'
+#	don't use absolute path so can directly test in app
 require 'test_helper'
 
 class SimplyPages::PageTest < ActiveSupport::TestCase
@@ -7,6 +8,11 @@ class SimplyPages::PageTest < ActiveSupport::TestCase
 		:model => 'Page')
 	assert_should_require_unique(:path,:menu_en,
 		:model => 'Page')
+	assert_should_require_attribute_length(:path,:minimum => 1,
+		:model => 'Page')
+	assert_should_require_attribute_length(:menu_en,:title_en,:body_en,
+		:model => 'Page',
+		:minimum => 1)
 
 	test "should create page" do
 		assert_difference 'Page.count' do
@@ -20,34 +26,6 @@ class SimplyPages::PageTest < ActiveSupport::TestCase
 		assert_no_difference 'Page.count' do
 			page = create_page(:path => 'Hey')
 			assert page.errors.on(:path)
-		end
-	end
-
-	test "should require 1 char path" do
-		assert_no_difference 'Page.count' do
-			page = create_page(:path => '')
-			assert page.errors.on(:path)
-		end
-	end
-
-	test "should require 4 char menu_en" do
-		assert_no_difference 'Page.count' do
-			page = create_page(:menu_en => 'Hey')
-			assert page.errors.on(:menu_en)
-		end
-	end
-
-	test "should require 4 char title_en" do
-		assert_no_difference 'Page.count' do
-			page = create_page(:title_en => 'Hey')
-			assert page.errors.on(:title_en)
-		end
-	end
-
-	test "should require 4 char body_en" do
-		assert_no_difference 'Page.count' do
-			page = create_page(:body_en => 'Hey')
-			assert page.errors.on(:body_en)
 		end
 	end
 
