@@ -4,14 +4,10 @@ require 'test_helper'
 
 class SimplyPages::PageTest < ActiveSupport::TestCase
 
-	assert_should_require(:path,:menu_en,:title_en,:body_en,
-		:model => 'Page')
-	assert_should_require_unique(:path,:menu_en,
-		:model => 'Page')
-	assert_should_require_attribute_length(:path,:minimum => 1,
-		:model => 'Page')
+	assert_should_require(:path,:menu_en,:title_en,:body_en)
+	assert_should_require_unique(:path,:menu_en)
+	assert_should_require_attribute_length(:path,:minimum => 1)
 	assert_should_require_attribute_length(:menu_en,:title_en,:body_en,
-		:model => 'Page',
 		:minimum => 1)
 
 	test "should create page" do
