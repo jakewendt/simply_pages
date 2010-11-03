@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.1.2"
+  s.version = "1.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2010-11-01}
+  s.date = %q{2010-11-03}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jake.otherinbox.com}
   s.extra_rdoc_files = [
@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
      "lib/simply_pages.rb",
      "lib/simply_pages/autotest.rb",
      "lib/simply_pages/factories.rb",
-     "lib/simply_pages/pending.rb",
      "lib/simply_pages/redcloth/formatters/html.rb",
      "lib/simply_pages/tasks.rb",
      "lib/simply_pages/test_tasks.rb"
