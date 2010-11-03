@@ -148,13 +148,4 @@ class SimplyPages::PageTest < ActiveSupport::TestCase
 		assert_equal p.body('es'), p.body_en
 	end
 
-protected
-
-	def create_page(options = {})
-		record = Factory.build(:page,options)
-		record.save
-		record
-	end
-	alias_method :create_object, :create_page
-
 end
