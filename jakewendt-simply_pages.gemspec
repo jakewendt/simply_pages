@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.1.4"
+  s.version = "1.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2010-11-03}
+  s.date = %q{2010-11-05}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jake.otherinbox.com}
   s.extra_rdoc_files = [
@@ -31,11 +31,13 @@ Gem::Specification.new do |s|
      "config/routes.rb",
      "generators/simply_pages/USAGE",
      "generators/simply_pages/simply_pages_generator.rb",
+     "generators/simply_pages/templates/autotest_simply_pages.rb",
      "generators/simply_pages/templates/functional/locales_controller_test.rb",
      "generators/simply_pages/templates/functional/pages_controller_test.rb",
      "generators/simply_pages/templates/images/drag.gif",
      "generators/simply_pages/templates/javascripts/pages.js",
      "generators/simply_pages/templates/migrations/create_pages.rb",
+     "generators/simply_pages/templates/simply_pages.rake",
      "generators/simply_pages/templates/stylesheets/page.css",
      "generators/simply_pages/templates/stylesheets/pages.css",
      "generators/simply_pages/templates/unit/page_test.rb",
