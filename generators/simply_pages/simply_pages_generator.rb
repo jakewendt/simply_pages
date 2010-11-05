@@ -5,20 +5,24 @@ class SimplyPagesGenerator < Rails::Generator::Base
 		#	rails-2.3.10/lib/rails_generator/commands.rb
 		#	for code methods for record (Manifest)
 		record do |m|
+			m.directory('config/autotest')
+			m.file('autotest_simply_pages.rb', 'config/autotest/simply_pages.rb')
+			m.directory('lib/tasks')
+			m.file('simply_pages.rake', 'lib/tasks/simply_pages.rake')
 
-			File.open('Rakefile','a'){|f| 
-				f.puts <<-EOF
-#	From `script/generate simply_pages` ...
-require 'simply_pages/test_tasks'
-				EOF
-			}
-
-			File.open('.autotest','a'){|f| 
-				f.puts <<-EOF
-#	From `script/generate simply_pages` ...
-require 'simply_pages/autotest'
-				EOF
-			}
+#			File.open('Rakefile','a'){|f| 
+#				f.puts <<-EOF
+##	From `script/generate simply_pages` ...
+#require 'simply_pages/test_tasks'
+#				EOF
+#			}
+#
+#			File.open('.autotest','a'){|f| 
+#				f.puts <<-EOF
+##	From `script/generate simply_pages` ...
+#require 'simply_pages/autotest'
+#				EOF
+#			}
 
 			%w( create_pages ).each do |migration|
 				m.migration_template "migrations/#{migration}.rb",
