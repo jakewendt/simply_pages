@@ -36,6 +36,8 @@ This is both a plugin engine and a basic rails app.
 
  script/generate simply_pages
 
+ User.find_create_and_update_by_uid('859908').deputize
+
 == Testing (as an app)
 
  rake db:migrate
