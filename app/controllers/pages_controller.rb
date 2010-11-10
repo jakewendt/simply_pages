@@ -19,7 +19,10 @@ class PagesController < ApplicationController
 #	caches_page generates an actual file in public/
 #	it would probably require modifications to the
 #	page_sweeper's expire calls
-	caches_action :show	#, :layout => false
+
+	#	This will also cache the flash output so don't cache layout
+	caches_action :show, :layout => false
+
 #	caches_page :show	#, :layout => false
 	cache_sweeper :page_sweeper, :only => [:create, :update, :order, :destroy]
 
