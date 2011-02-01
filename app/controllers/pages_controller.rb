@@ -2,13 +2,15 @@ class PagesController < ApplicationController
 
 	skip_before_filter :login_required, 
 		:only => [:show, :translate]
-	skip_before_filter :build_menu_js, 
-		:only => [:translate]
+#	removed method
+#	skip_before_filter :build_menu_js, 
+#		:only => [:translate]
 
 	before_filter :may_maintain_pages_required, :except => [:show, :translate]
 	before_filter :id_required, :only => [ :edit, :update, :destroy ]
 	before_filter :page_required, :only => :show
-	before_filter :build_submenu_js, :except => [:index, :order, :translate]
+#	removed method
+#	before_filter :build_submenu_js, :except => [:index, :order, :translate]
 
 #	caches partials from layout as well, which is too much
 #	caching still buggy
@@ -119,28 +121,28 @@ protected
 		flash.now[:error] = flash_message
 	end
 
-	def build_submenu_js
-		if @page && !@page.root.children.empty?
-			js = "" <<
-				"if ( typeof(translatables) == 'undefined' ){\n" <<
-				"	var translatables = [];\n" <<
-				"}\n"
-			js << "tmp={tag:'#current_root',locales:{}};\n"
-			%w( en es ).each do |locale|
-				js << "tmp.locales['#{locale}']='#{@page.root.menu(locale)}'\n"
-			end
-			js << "translatables.push(tmp);\n"
-			@page.root.children.each do |child|
-				js << "tmp={tag:'#menu_#{dom_id(child)}',locales:{}};\n"
-				%w( en es ).each do |locale|
-					js << "tmp.locales['#{locale}']='#{child.menu(locale)}'\n"
-				end
-				js << "translatables.push(tmp);\n"
-			end
-			@template.content_for :head do
-				@template.javascript_tag js
-			end
-		end
-	end
+#	def build_submenu_js
+#		if @page && !@page.root.children.empty?
+#			js = "" <<
+#				"if ( typeof(translatables) == 'undefined' ){\n" <<
+#				"	var translatables = [];\n" <<
+#				"}\n"
+#			js << "tmp={tag:'#current_root',locales:{}};\n"
+#			%w( en es ).each do |locale|
+#				js << "tmp.locales['#{locale}']='#{@page.root.menu(locale)}'\n"
+#			end
+#			js << "translatables.push(tmp);\n"
+#			@page.root.children.each do |child|
+#				js << "tmp={tag:'#menu_#{dom_id(child)}',locales:{}};\n"
+#				%w( en es ).each do |locale|
+#					js << "tmp.locales['#{locale}']='#{child.menu(locale)}'\n"
+#				end
+#				js << "translatables.push(tmp);\n"
+#			end
+#			@template.content_for :head do
+#				@template.javascript_tag js
+#			end
+#		end
+#	end
 
 end

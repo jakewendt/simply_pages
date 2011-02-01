@@ -1,7 +1,8 @@
 class LocalesController < ApplicationController
 
 	skip_before_filter :login_required
-	skip_before_filter :build_menu_js
+#	removed method
+#	skip_before_filter :build_menu_js
 
 	def show
 		session[:locale] = params[:id]
