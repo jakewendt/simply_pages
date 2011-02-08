@@ -31,7 +31,6 @@ This is both a plugin engine and a basic rails app.
 == Installation (as a plugin/engine)
 
  config.gem 'jakewendt-simply_pages',
-   :lib    => 'simply_pages',
    :source => 'http://rubygems.org'
 
  script/generate simply_pages

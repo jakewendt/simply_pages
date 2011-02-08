@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.1.9"
+  s.version = "1.1.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2010-11-16}
+  s.date = %q{2011-02-08}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jake.otherinbox.com}
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
     "generators/simply_pages/templates/stylesheets/pages.css",
     "generators/simply_pages/templates/unit/page_test.rb",
     "generators/simply_pages/templates/unit/redcloth_extension_test.rb",
+    "lib/jakewendt-simply_pages.rb",
     "lib/simply_pages.rb",
     "lib/simply_pages/autotest.rb",
     "lib/simply_pages/factories.rb",
@@ -54,7 +55,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/jakewendt/simply_pages}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.5.0}
   s.summary = %q{A simple CMS}
   s.test_files = [
     "test/app/controllers/application_controller.rb",
@@ -68,7 +69,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then

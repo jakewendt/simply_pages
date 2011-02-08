@@ -1,1 +1,1 @@
-require 'simply_pages'
+require 'jakewendt-simply_pages'
