@@ -22,7 +22,7 @@ This is both a plugin engine and a basic rails app.
 * ruby-hmac
 * ssl_requirement
 * ryanb-acts-as-list
-* RedCloth
+* RedCloth	#	NOT 4.2.6
 * thoughtbot-factory_girl
 * {jakewendt-simply_helpful}[http://github.com/jakewendt/simply_helpful]
 * {jakewendt-simply_authorized}[http://github.com/jakewendt/simply_authorized]
