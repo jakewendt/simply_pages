@@ -11,14 +11,13 @@ Rails::Initializer.run do |config|
 	config.gem 'jakewendt-calnet_authenticated'
 	config.gem 'jakewendt-simply_authorized'
 	config.gem 'jakewendt-simply_helpful'
+	config.gem 'jakewendt-html_test'
 	config.gem 'RedCloth', :version => '!= 4.2.6'
 
 	config.plugin_paths = [
-		File.expand_path(File.join(File.dirname(__FILE__),'../..')),
-		File.expand_path(File.join(File.dirname(__FILE__),'../../..','peter'))
+		File.expand_path(File.join(File.dirname(__FILE__),'../..'))
 	]
-	config.plugins = [:simply_pages,
-		:html_test, :html_test_extension]
+	config.plugins = [:simply_pages ]
 
 	config.frameworks -= [:active_resource]
 
