@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
 	config.gem 'jakewendt-simply_authorized'
 	config.gem 'jakewendt-simply_helpful'
 	config.gem 'jakewendt-html_test'
+	config.gem 'jakewendt-rails_extension'
 	config.gem 'RedCloth', :version => '!= 4.2.6'
 
 	config.plugin_paths = [

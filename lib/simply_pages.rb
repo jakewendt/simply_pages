@@ -25,7 +25,7 @@ require 'simply_pages/redcloth/formatters/html'
 if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
 	require 'active_support/test_case'
 	require 'factory_girl'
-	require 'simply_testable'
+#	require 'simply_testable'
 	require 'simply_pages/factories'
 end
 
