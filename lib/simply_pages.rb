@@ -22,7 +22,7 @@ HTML::WhiteListSanitizer.allowed_attributes.merge(%w(
 
 require 'simply_pages/redcloth/formatters/html'
 
-if Rails.class_variable_defined?("@@configuration")
+if defined?(Rails) && Rails.env == 'test' && Rails.class_variable_defined?("@@configuration")
 	require 'active_support/test_case'
 	require 'factory_girl'
 	require 'simply_pages/factories'
