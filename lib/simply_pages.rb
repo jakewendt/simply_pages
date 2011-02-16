@@ -22,14 +22,12 @@ HTML::WhiteListSanitizer.allowed_attributes.merge(%w(
 
 require 'simply_pages/redcloth/formatters/html'
 
-#if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
 if Rails.class_variable_defined?("@@configuration")
 	require 'active_support/test_case'
 	require 'factory_girl'
-#	require 'simply_testable'
 	require 'simply_pages/factories'
-#      else
-#      running a rake task
+#	else
+#		running a rake task
 end
 
 ActionController::Routing::Routes.add_configuration_file(
