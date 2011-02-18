@@ -74,7 +74,7 @@ begin
 		gem.add_dependency('ryanb-acts-as-list')
 		gem.add_dependency('RedCloth','!=4.2.6')
 		gem.add_dependency('thoughtbot-factory_girl')
-		gem.add_dependency('ccls-calnet_authenticated')
+#		gem.add_dependency('ccls-calnet_authenticated')
 	end
 	Jeweler::GemcutterTasks.new
 rescue LoadError
