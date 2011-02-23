@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.3.0"
+  s.version = "1.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
@@ -50,7 +50,8 @@ Gem::Specification.new do |s|
     "lib/simply_pages/tasks.rb",
     "lib/simply_pages/test_tasks.rb",
     "lib/tasks/simply_authorized.rake",
-    "lib/tasks/simply_helpful.rake"
+    "lib/tasks/simply_helpful.rake",
+    "lib/tasks/simply_sessions.rake"
   ]
   s.homepage = %q{http://github.com/jakewendt/simply_pages}
   s.require_paths = ["lib"]
