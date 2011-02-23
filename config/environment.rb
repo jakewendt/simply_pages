@@ -8,7 +8,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-	config.gem 'ccls-calnet_authenticated'
 	config.gem 'jakewendt-simply_authorized'
 	config.gem 'jakewendt-simply_helpful'
 	config.gem 'jakewendt-html_test'

@@ -1,12 +1,19 @@
 class PagesController < ApplicationController
 
+	before_filter :login_required
+
+	#	calnet_authenticated
 	skip_before_filter :login_required, 
 		:only => [:show, :translate]
+
 #	removed method
 #	skip_before_filter :build_menu_js, 
 #		:only => [:translate]
 
-	before_filter :may_maintain_pages_required, :except => [:show, :translate]
+	#	simply_authorized
+	before_filter :may_maintain_pages_required, 
+		:except => [:show, :translate]
+
 	before_filter :id_required, :only => [ :edit, :update, :destroy ]
 	before_filter :page_required, :only => :show
 #	removed method
