@@ -26,7 +26,7 @@ begin
 		gem.name = "jakewendt-simply_pages"
 		gem.summary = %Q{A simple CMS}
 		gem.description = %Q{A really simple CMS}
-		gem.email = "github@jake.otherinbox.com"
+		gem.email = "github@jakewendt.com"
 		gem.homepage = "http://github.com/jakewendt/simply_pages"
 		gem.authors = ["George 'Jake' Wendt"]
 		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -72,8 +72,8 @@ begin
 		gem.add_dependency('jakewendt-simply_authorized')
 		gem.add_dependency('ssl_requirement')
 		gem.add_dependency('ryanb-acts-as-list')
-		gem.add_dependency('RedCloth','!=4.2.6')
-		gem.add_dependency('thoughtbot-factory_girl')
+		gem.add_dependency('RedCloth','>4.2.6')
+#		gem.add_dependency('thoughtbot-factory_girl')
 #		gem.add_dependency('ccls-calnet_authenticated')
 	end
 	Jeweler::GemcutterTasks.new

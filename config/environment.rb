@@ -13,7 +13,9 @@ Rails::Initializer.run do |config|
 	config.gem 'jakewendt-simply_helpful'
 	config.gem 'jakewendt-html_test'
 	config.gem 'jakewendt-rails_extension'
-	config.gem 'RedCloth', :version => '!= 4.2.6'
+	config.gem 'RedCloth', :version => '> 4.2.6'
+	config.gem 'thoughtbot-factory_girl',
+		:lib => 'factory_girl'
 
 	config.plugin_paths = [
 		File.expand_path(File.join(File.dirname(__FILE__),'../..'))
@@ -46,7 +48,7 @@ Rails::Initializer.run do |config|
 		config.gem 'jdbc-sqlite3', :lib => 'jdbc/sqlite3'
 		config.gem 'jruby-openssl', :lib => 'openssl'
 	else
-		config.gem "sqlite3-ruby", :lib => "sqlite3"
+		config.gem "sqlite3"
 	end
 	
 end
