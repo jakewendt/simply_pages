@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.3.2"
+  s.version = "1.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2011-03-02}
+  s.date = %q{2011-05-26}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jakewendt.com}
   s.extra_rdoc_files = [
@@ -55,18 +55,9 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/jakewendt/simply_pages}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.0}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{A simple CMS}
-  s.test_files = [
-    "test/app/controllers/application_controller.rb",
-    "test/app/models/user.rb",
-    "test/config/routes.rb",
-    "test/functional/engine_pages_controller_test.rb",
-    "test/functional/pages/locales_controller_test.rb",
-    "test/functional/pages/pages_controller_test.rb",
-    "test/unit/pages/page_test.rb",
-    "test/unit/pages/redcloth_extension_test.rb"
-  ]
+  s.test_files = ["test/app/controllers/application_controller.rb", "test/app/models/user.rb", "test/config/routes.rb", "test/functional/engine_pages_controller_test.rb", "test/functional/pages/locales_controller_test.rb", "test/functional/pages/pages_controller_test.rb", "test/unit/pages/page_test.rb", "test/unit/pages/redcloth_extension_test.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
