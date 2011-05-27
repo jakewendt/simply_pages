@@ -66,7 +66,8 @@ begin
 #
 		gem.add_dependency('rails', '~> 2')
 		gem.add_dependency('jrails')
-		gem.add_dependency('jakewendt-simply_helpful')
+#	causes problems
+#		gem.add_dependency('jakewendt-simply_helpful')
 		gem.add_dependency('jakewendt-ruby_extension')
 		gem.add_dependency('jakewendt-rails_extension')
 		gem.add_dependency('jakewendt-simply_authorized')
