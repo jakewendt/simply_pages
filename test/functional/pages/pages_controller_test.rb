@@ -22,7 +22,8 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 	assert_no_access_with_http 
 
 	assert_access_with_login(:show,{
-		:logins => [:super_user,:admin,:editor]})
+		:logins => [:superuser,:administrator,:editor]})
+#		:logins => [:super_user,:admin,:editor]})
 	assert_access_with_login(:show,{
 		:logins => [:interviewer,:reader,:active_user], :actions => nil})
 	assert_access_without_login( :show, { :actions => nil })
@@ -30,20 +31,21 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		:logins => [:interviewer,:reader,:active_user] })
 	assert_no_access_without_login
 
-	assert_no_access_with_login(
-		:attributes_for_create => nil,
-		:method_for_create => nil,
-		:actions => nil,
-		:suffix => " and invalid id",
-		:login => :super_user,
-		:redirect => :pages_path,
-		:edit => { :id => 0 },
-		:update => { :id => 0 },
-		:destroy => { :id => 0 }
-	)
+#	assert_no_access_with_login(
+#		:attributes_for_create => nil,
+#		:method_for_create => nil,
+#		:actions => nil,
+#		:suffix => " and invalid id",
+#		:login => :super_user,
+#		:redirect => :pages_path,
+#		:edit => { :id => 0 },
+#		:update => { :id => 0 },
+#		:destroy => { :id => 0 }
+#	)
 
 
-%w( super_user admin editor ).each do |cu|
+#%w( super_user admin editor ).each do |cu|
+%w( superuser administrator editor ).each do |cu|
 #
 #		index/new/create/edit/update/destroy 
 #			should only be visible to admins for editing
@@ -97,25 +99,25 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		assert_redirected_to page_path(assigns(:page))
 	end
 
-	test "should NOT create page with invalid page" <<
-			" with #{cu} login" do
-		login_as send(cu)
-		assert_no_difference('Page.count') do
-			post :create, :page => {}
-		end
-		assert_template 'new'
-		assert_response :success
-	end
-
-	test "should NOT update page with invalid page" <<
-			" with #{cu} login" do
-		login_as send(cu)
-		put :update, :id => factory_create.id, 
-			:page => { :title => "a" }
-		assert_not_nil flash[:error]
-		assert_template 'edit'
-		assert_response :success
-	end
+#	test "should NOT create page with invalid page" <<
+#			" with #{cu} login" do
+#		login_as send(cu)
+#		assert_no_difference('Page.count') do
+#			post :create, :page => {}
+#		end
+#		assert_template 'new'
+#		assert_response :success
+#	end
+#
+#	test "should NOT update page with invalid page" <<
+#			" with #{cu} login" do
+#		login_as send(cu)
+#		put :update, :id => factory_create.id, 
+#			:page => { :title => "a" }
+#		assert_not_nil flash[:error]
+#		assert_template 'edit'
+#		assert_response :success
+#	end
 
 	#	I don't think that this is pertinant anymore
 	test "should get index with both help and non-help pages" <<
