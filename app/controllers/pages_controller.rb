@@ -80,7 +80,7 @@ class PagesController < ApplicationController
 		@page.save!
 		flash[:notice] = 'Page was successfully created.'
 		redirect_to(@page)
-	rescue ActiveRecord::RecordInvalid
+	rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved
 		flash.now[:error] = "There was a problem creating the page"
 		render :action => "new"
 	end
@@ -89,7 +89,7 @@ class PagesController < ApplicationController
 		@page.update_attributes!(params[:page])
 		flash[:notice] = 'Page was successfully updated.'
 		redirect_to(@page)
-	rescue ActiveRecord::RecordInvalid
+	rescue ActiveRecord::RecordInvalid, ActiveRecord::RecordNotSaved
 		flash.now[:error] = "There was a problem updating the page."
 		render :action => "edit"
 	end
