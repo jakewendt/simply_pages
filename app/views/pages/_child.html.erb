@@ -9,9 +9,10 @@
 <%= link_to child.title(session[:locale]), child -%>
 </td>
 <td class='manage'>
-<%= link_to "Edit", edit_page_path(child) -%>
+<%= link_to "Edit", edit_page_path(child), :class => 'button' -%>
 &nbsp;
 <%= link_to "Destroy", page_path(child), 
+	:class => 'button',
 	:confirm => "Delete '#{child.title(session[:locale])}'?\nAre you sure?", 
 	:method => :delete -%>
 </td>

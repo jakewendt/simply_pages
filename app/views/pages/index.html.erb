@@ -7,14 +7,17 @@
 <%= render :partial => 'page', :collection => @pages %>
 </tbody></table><!-- id='pages' -->
 <% else %>
-Sorry, no pages yet.
+<p>Sorry, no pages yet.</p>
 <% end %>
 
 <% form_tag(order_pages_path, :method => :post, :id => 'order_pages') do -%>
 <%= hidden_field_tag :parent_id, params[:parent_id] %>
 <p>
-<%= button_link_to "Create new page", 
-	new_page_path(:parent_id => params[:parent_id]) -%>&nbsp;
+<%#= button_link_to "Create new page", 
+	new_page_path(:parent_id => params[:parent_id]) -%>
+<%= link_to "Create new page", 
+	new_page_path(:parent_id => params[:parent_id]),
+	:class => 'button' -%>&nbsp;
 <%= submit_tag 'Save page order', :name => nil, :id => 'save_order' %>
 </p>
 <% end %>

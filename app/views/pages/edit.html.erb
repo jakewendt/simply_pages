@@ -4,6 +4,7 @@
   <%= render 'form', :f => f %>
   <p>
     <%= f.submit "Update", :id => nil %>&nbsp;
-    <%= button_link_to "Cancel and View", @page %>
+    <%#= button_link_to "Cancel and View", @page %>
+    <%= button_link_to "Cancel and View", @page, :class => 'button' %>
   </p>
 <% end %>
