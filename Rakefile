@@ -39,6 +39,9 @@ begin
 		gem.files += FileList['lib/**/*.rake']
 		gem.files += FileList['generators/**/*']
 		gem.files -= FileList['**/versions/*']
+		gem.files -= FileList['app/views/layouts/application.html.erb']
+		gem.files -= FileList['app/controllers/application_controller.rb']
+		gem.files -= FileList['app/models/user.rb']
 #
 #	I'm not quite sure if it matters whether these files
 #	are included as 'files' or 'test_files', but

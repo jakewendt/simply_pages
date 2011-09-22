@@ -17,42 +17,30 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		Factory.attributes_for(:page,options)
 	end
 
-	assert_access_with_http :show, { :actions => nil }
-	assert_access_with_https :show
-	assert_no_access_with_http 
+	with_options :actions => [:show] do |show|
+		show.assert_access_with_http
+		show.assert_access_with_https
+		show.assert_access_with_login({
+			:logins => [:superuser,:administrator,:editor],
+			:skip_show_failure => true })
+		show.assert_access_with_login({
+			:logins => [:interviewer,:reader,:active_user], 
+			:skip_show_failure => true })
+		show.assert_access_without_login
+	end
 
-	assert_access_with_login(:show,{
-		:logins => [:superuser,:administrator,:editor]})
-#		:logins => [:super_user,:admin,:editor]})
-	assert_access_with_login(:show,{
-		:logins => [:interviewer,:reader,:active_user], :actions => nil})
-	assert_access_without_login( :show, { :actions => nil })
 	assert_no_access_with_login({ 
 		:logins => [:interviewer,:reader,:active_user] })
 	assert_no_access_without_login
+	assert_no_access_with_http 
 
-#	assert_no_access_with_login(
-#		:attributes_for_create => nil,
-#		:method_for_create => nil,
-#		:actions => nil,
-#		:suffix => " and invalid id",
-#		:login => :super_user,
-#		:redirect => :pages_path,
-#		:edit => { :id => 0 },
-#		:update => { :id => 0 },
-#		:destroy => { :id => 0 }
-#	)
-
-
-#%w( super_user admin editor ).each do |cu|
 %w( superuser administrator editor ).each do |cu|
 #
 #		index/new/create/edit/update/destroy 
 #			should only be visible to admins for editing
 #	
 
-	test "should get index with pages " <<
-			"with #{cu} login" do
+	test "should get index with pages with #{cu} login" do
 		3.times{ factory_create }
 		login_as send(cu)
 		get :index
@@ -62,8 +50,7 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		assigns(:pages).each { |page| assert_nil page.parent }
 	end
 
-	test "should get index with blank parent " <<
-			"with #{cu} login" do
+	test "should get index with blank parent with #{cu} login" do
 		3.times{ factory_create }
 		login_as send(cu)
 		get :index, :parent_id => ''
@@ -73,8 +60,7 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		assigns(:pages).each { |page| assert_nil page.parent }
 	end
 
-	test "should get index with subpages " <<
-			"with #{cu} login" do
+	test "should get index with subpages with #{cu} login" do
 		parent = factory_create
 		3.times{ factory_create(:parent_id => parent.id) }
 		login_as send(cu)
@@ -87,8 +73,7 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		end
 	end
 
-	test "should create page with parent" <<
-			" with #{cu} login" do
+	test "should create page with parent with #{cu} login" do
 		parent = factory_create
 		login_as send(cu)
 		assert_difference('Page.count') do
@@ -99,29 +84,8 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		assert_redirected_to page_path(assigns(:page))
 	end
 
-#	test "should NOT create page with invalid page" <<
-#			" with #{cu} login" do
-#		login_as send(cu)
-#		assert_no_difference('Page.count') do
-#			post :create, :page => {}
-#		end
-#		assert_template 'new'
-#		assert_response :success
-#	end
-#
-#	test "should NOT update page with invalid page" <<
-#			" with #{cu} login" do
-#		login_as send(cu)
-#		put :update, :id => factory_create.id, 
-#			:page => { :title => "a" }
-#		assert_not_nil flash[:error]
-#		assert_template 'edit'
-#		assert_response :success
-#	end
-
 	#	I don't think that this is pertinant anymore
-	test "should get index with both help and non-help pages" <<
-			" with #{cu} login" do
+	test "should get index with both help and non-help pages with #{cu} login" do
 		#	test css menus
 		login_as send(cu)
 		nonhelp_page = factory_create(:path => "/hello" )
@@ -133,8 +97,7 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 
 #	action: order
 
-	test "should order pages" <<
-			" with #{cu} login" do
+	test "should order pages with #{cu} login" do
 		login_as send(cu)
 #		pages = 3.times.collect{|i| factory_create }
 #	3.times.collect doesn't work on 
@@ -149,16 +112,14 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 		assert_redirected_to pages_path
 	end
 
-	test "should NOT order pages without pages " <<
-			"with #{cu} login" do
+	test "should NOT order pages without pages with #{cu} login" do
 		login_as send(cu)
 		post :order
 		assert_not_nil flash[:error]
 		assert_redirected_to pages_path
 	end
 
-	test "should order sub pages" <<
-			" with #{cu} login" do
+	test "should order sub pages with #{cu} login" do
 		login_as send(cu)
 		parent = factory_create
 		pages = []
@@ -175,8 +136,7 @@ end
 
 %w( interviewer reader active_user ).each do |cu|
 
-	test "should NOT order pages" <<
-			" with #{cu} login" do
+	test "should NOT order pages with #{cu} login" do
 		login_as send(cu)
 		pages = []
 		3.times{ pages.push(factory_create) }
