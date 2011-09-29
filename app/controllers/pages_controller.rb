@@ -60,6 +60,11 @@ class PagesController < ApplicationController
 	def show
 	end
 
+	def all
+		@page_title = "All CCLS Pages"
+		@pages = Page.all
+	end
+
 	def index
 		@page_title = "CCLS Pages"
 		params[:parent_id] = nil if params[:parent_id].blank?

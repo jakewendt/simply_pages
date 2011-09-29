@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.3.7"
+  s.version = "1.3.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2011-09-21}
+  s.date = %q{2011-09-29}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jakewendt.com}
   s.extra_rdoc_files = [
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "app/views/pages/_child.html.erb",
     "app/views/pages/_form.html.erb",
     "app/views/pages/_page.html.erb",
+    "app/views/pages/all.html.erb",
     "app/views/pages/edit.html.erb",
     "app/views/pages/index.html.erb",
     "app/views/pages/new.html.erb",

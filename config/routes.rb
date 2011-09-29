@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
 	map.resources :pages, :collection => { 
+		:all => :get,
 		:translate => :get,
 		:order => :post }
 
