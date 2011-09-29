@@ -56,7 +56,8 @@ class SimplyPages::PagesControllerTest < ActionController::TestCase
 			assert_response :success
 			assert_not_nil assigns(:pages)
 			assigns(:pages).each { |page| assert_nil page.parent }
-			assert Page.count != assigns(:pages).length
+#	this isn't always true, depending the apps fixtures/pages.yml
+#			assert Page.count != assigns(:pages).length
 		end
 
 		test "should get index with blank parent with #{cu} login" do
