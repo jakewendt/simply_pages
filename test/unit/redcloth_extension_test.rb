@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SimplyPages::RedClothExtensionTest < ActiveSupport::TestCase
+class RedClothExtensionTest < ActiveSupport::TestCase
 
 	teardown :destroy_relative_url_root
 

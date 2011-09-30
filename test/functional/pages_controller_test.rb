@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class SimplyPages::PagesControllerTest < ActionController::TestCase
-	tests PagesController
+class PagesControllerTest < ActionController::TestCase
 
 	ASSERT_ACCESS_OPTIONS = {
 		:model => 'Page',

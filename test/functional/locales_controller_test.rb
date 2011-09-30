@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class SimplyPages::LocalesControllerTest < ActionController::TestCase
-	tests LocalesController
+class LocalesControllerTest < ActionController::TestCase
 
 	test "should set locale to en" do
 		assert_nil session[:locale]

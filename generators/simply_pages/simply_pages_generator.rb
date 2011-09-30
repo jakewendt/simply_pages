@@ -5,10 +5,16 @@ class SimplyPagesGenerator < Rails::Generator::Base
 		#	rails-2.3.10/lib/rails_generator/commands.rb
 		#	for code methods for record (Manifest)
 		record do |m|
-			m.directory('config/autotest')
-			m.file('autotest_simply_pages.rb', 'config/autotest/simply_pages.rb')
-			m.directory('lib/tasks')
-			m.file('simply_pages.rake', 'lib/tasks/simply_pages.rake')
+
+			#	Will add this multiple times with multiple calls.
+			#	TODO Would like to only do it conditionally.
+			#	TODO Also, would prefer a bit more as have other routes.
+			m.route_resources :pages
+
+#			m.directory('config/autotest')
+#			m.file('autotest_simply_pages.rb', 'config/autotest/simply_pages.rb')
+#			m.directory('lib/tasks')
+#			m.file('simply_pages.rake', 'lib/tasks/simply_pages.rake')
 
 #			File.open('Rakefile','a'){|f| 
 #				f.puts <<-EOF
@@ -39,16 +45,37 @@ class SimplyPagesGenerator < Rails::Generator::Base
 				f = file.split('/').slice(-2,2).join('/')
 				m.file(f, "public/stylesheets/#{File.basename(file)}")
 			}
-#			m.directory('test/functional/pages')
-#			Dir["#{File.dirname(__FILE__)}/templates/functional/*rb"].each{|file| 
-#				f = file.split('/').slice(-2,2).join('/')
-#				m.file(f, "test/functional/pages/#{File.basename(file)}")
-#			}
-#			m.directory('test/unit/pages')
-#			Dir["#{File.dirname(__FILE__)}/templates/unit/*rb"].each{|file| 
-#				f = file.split('/').slice(-2,2).join('/')
-#				m.file(f, "test/unit/pages/#{File.basename(file)}")
-#			}
+
+			m.directory('app/models')
+			Dir["#{dot}/templates/models/*rb"].each{|file| 
+				f = file.split('/').slice(-2,2).join('/')
+				m.file(f, "app/models/#{File.basename(file)}")
+			}
+
+			m.directory('app/controllers ')
+			Dir["#{dot}/templates/controllers/*rb"].each{|file| 
+				f = file.split('/').slice(-2,2).join('/')
+				m.file(f, "app/controllers/#{File.basename(file)}")
+			}
+
+			m.directory('app/views/pages')
+			Dir["#{dot}/templates/views/pages/*rb"].each{|file| 
+				f = file.split('/').slice(-3,3).join('/')			has an extra directory in path
+				m.file(f, "app/views/pages/#{File.basename(file)}")
+			}
+
+			m.directory('test/functional')
+			Dir["#{dot}/templates/functional/*rb"].each{|file| 
+				f = file.split('/').slice(-2,2).join('/')
+				m.file(f, "test/functional/#{File.basename(file)}")
+			}
+
+			m.directory('test/unit')
+			Dir["#{dot}/templates/unit/*rb"].each{|file| 
+				f = file.split('/').slice(-2,2).join('/')
+				m.file(f, "test/unit/#{File.basename(file)}")
+			}
+
 		end
 	end
 
