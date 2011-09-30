@@ -8,7 +8,14 @@ class SimplyPagesGenerator < Rails::Generator::Base
 
 			#	Will add this multiple times with multiple calls.
 			#	TODO Would like to only do it conditionally.
-			#	TODO Also, would prefer a bit more as have other routes.
+			#	TODO Also, would prefer a bit more control as have other routes.
+
+#	map.resources :pages, :collection => {
+#		:all => :get,
+#		:translate => :get,
+#		:order => :post }
+#	map.resources :locales, :only => :show
+
 			m.route_resources :pages
 
 #			m.directory('config/autotest')
@@ -30,18 +37,20 @@ class SimplyPagesGenerator < Rails::Generator::Base
 #				EOF
 #			}
 
+			dot = File.dirname(__FILE__)
+
 			%w( create_pages ).each do |migration|
 				m.migration_template "migrations/#{migration}.rb",
 					'db/migrate', :migration_file_name => migration
 			end
 
 			m.directory('public/javascripts')
-			Dir["#{File.dirname(__FILE__)}/templates/javascripts/*js"].each{|file| 
+			Dir["#{dot}/templates/javascripts/*js"].each{|file| 
 				f = file.split('/').slice(-2,2).join('/')
 				m.file(f, "public/javascripts/#{File.basename(file)}")
 			}
 			m.directory('public/stylesheets')
-			Dir["#{File.dirname(__FILE__)}/templates/stylesheets/*css"].each{|file| 
+			Dir["#{dot}/templates/stylesheets/*css"].each{|file| 
 				f = file.split('/').slice(-2,2).join('/')
 				m.file(f, "public/stylesheets/#{File.basename(file)}")
 			}
@@ -60,7 +69,7 @@ class SimplyPagesGenerator < Rails::Generator::Base
 
 			m.directory('app/views/pages')
 			Dir["#{dot}/templates/views/pages/*rb"].each{|file| 
-				f = file.split('/').slice(-3,3).join('/')			has an extra directory in path
+				f = file.split('/').slice(-3,3).join('/')			# has an extra directory in path
 				m.file(f, "app/views/pages/#{File.basename(file)}")
 			}
 
