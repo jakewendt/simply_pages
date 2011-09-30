@@ -1,5 +1,3 @@
-#require File.dirname(__FILE__) + '/../../test_helper'
-#	don't use absolute path so can directly test in app
 require 'test_helper'
 
 class SimplyPages::PageTest < ActiveSupport::TestCase
@@ -8,7 +6,7 @@ class SimplyPages::PageTest < ActiveSupport::TestCase
 	assert_should_require_unique(:path,:menu_en)
 	assert_should_require_attribute_length(:path,:minimum => 1)
 	assert_should_require_attribute_length(:menu_en,:title_en,:body_en,
-		:minimum => 1)
+		:minimum => 4)
 
 	test "should create page" do
 		assert_difference 'Page.count' do

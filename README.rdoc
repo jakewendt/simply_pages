@@ -1,6 +1,10 @@
 = SimplyPages
 
-This is both a plugin engine and a basic rails app.
+This WAS both a plugin engine and a basic rails app.
+
+It is now being converted in a simple generator to copy the code into the app.
+
+Still working on it, so it may be a bit bumpy.
 
 
 
@@ -30,12 +34,12 @@ This is both a plugin engine and a basic rails app.
 
 == Installation (as a plugin/engine)
 
- config.gem 'jakewendt-simply_pages',
-   :source => 'http://rubygems.org'
+# config.gem 'jakewendt-simply_pages',
+#   :source => 'http://rubygems.org'
 
  script/generate simply_pages
 
- User.find_create_and_update_by_uid('859908').deputize
+# User.find_create_and_update_by_uid('859908').deputize
 
 == Testing (as an app)
 
