@@ -6,6 +6,7 @@ It is now being converted in a simple generator to copy the code into the app.
 
 Still working on it, so it may be a bit bumpy.
 
+While this gem is wrapped in a rails app, it is solely for testing.  It will not work.
 
 
 == ToDo
@@ -18,7 +19,6 @@ Still working on it, so it may be a bit bumpy.
 
 == Required Gems
 
-* {jakewendt-assert_this_and_that}[http://github.com/jakewendt/assert_this_and_that]
 * {jakewendt-ruby_extension}[http://github.com/jakewendt/ruby_extension] - modifications, updates and patches for ruby.
 * rails ~> 2
 * jrails
