@@ -5,93 +5,56 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jakewendt-simply_pages}
-  s.version = "1.3.9"
+  s.version = "2.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["George 'Jake' Wendt"]
-  s.date = %q{2011-09-29}
+  s.date = %q{2011-09-30}
   s.description = %q{A really simple CMS}
   s.email = %q{github@jakewendt.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
-    "app/controllers/locales_controller.rb",
-    "app/controllers/pages_controller.rb",
-    "app/models/page.rb",
-    "app/models/page_sweeper.rb",
-    "app/views/pages/_child.html.erb",
-    "app/views/pages/_form.html.erb",
-    "app/views/pages/_page.html.erb",
-    "app/views/pages/all.html.erb",
-    "app/views/pages/edit.html.erb",
-    "app/views/pages/index.html.erb",
-    "app/views/pages/new.html.erb",
-    "app/views/pages/show.html.erb",
-    "app/views/pages/translate.js.erb",
-    "config/routes.rb",
     "generators/simply_pages/USAGE",
     "generators/simply_pages/simply_pages_generator.rb",
     "generators/simply_pages/templates/autotest_simply_pages.rb",
+    "generators/simply_pages/templates/controllers/locales_controller.rb",
+    "generators/simply_pages/templates/controllers/pages_controller.rb",
     "generators/simply_pages/templates/functional/locales_controller_test.rb",
     "generators/simply_pages/templates/functional/pages_controller_test.rb",
     "generators/simply_pages/templates/images/drag.gif",
     "generators/simply_pages/templates/javascripts/pages.js",
     "generators/simply_pages/templates/migrations/create_pages.rb",
+    "generators/simply_pages/templates/models/page.rb",
+    "generators/simply_pages/templates/models/page_sweeper.rb",
     "generators/simply_pages/templates/simply_pages.rake",
     "generators/simply_pages/templates/stylesheets/page.css",
     "generators/simply_pages/templates/stylesheets/pages.css",
     "generators/simply_pages/templates/unit/page_test.rb",
     "generators/simply_pages/templates/unit/redcloth_extension_test.rb",
-    "lib/jakewendt-simply_pages.rb",
-    "lib/simply_pages.rb",
-    "lib/simply_pages/autotest.rb",
-    "lib/simply_pages/factories.rb",
-    "lib/simply_pages/redcloth/formatters/html.rb",
-    "lib/simply_pages/tasks.rb",
-    "lib/simply_pages/test_tasks.rb",
-    "lib/tasks/simply_authorized.rake",
-    "lib/tasks/simply_helpful.rake",
-    "lib/tasks/simply_sessions.rake",
-    "rails/init.rb"
+    "generators/simply_pages/templates/views/pages/_child.html.erb",
+    "generators/simply_pages/templates/views/pages/_form.html.erb",
+    "generators/simply_pages/templates/views/pages/_page.html.erb",
+    "generators/simply_pages/templates/views/pages/all.html.erb",
+    "generators/simply_pages/templates/views/pages/edit.html.erb",
+    "generators/simply_pages/templates/views/pages/index.html.erb",
+    "generators/simply_pages/templates/views/pages/new.html.erb",
+    "generators/simply_pages/templates/views/pages/show.html.erb",
+    "generators/simply_pages/templates/views/pages/translate.js.erb"
   ]
   s.homepage = %q{http://github.com/jakewendt/simply_pages}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{A simple CMS}
-  s.test_files = ["test/config/routes.rb", "test/functional/engine_pages_controller_test.rb", "test/functional/pages/locales_controller_test.rb", "test/functional/pages/pages_controller_test.rb", "test/unit/pages/page_test.rb", "test/unit/pages/redcloth_extension_test.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 2"])
-      s.add_runtime_dependency(%q<jrails>, [">= 0"])
-      s.add_runtime_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
-      s.add_runtime_dependency(%q<jakewendt-rails_extension>, [">= 0"])
-      s.add_runtime_dependency(%q<jakewendt-simply_authorized>, [">= 0"])
-      s.add_runtime_dependency(%q<ssl_requirement>, [">= 0"])
-      s.add_runtime_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-      s.add_runtime_dependency(%q<RedCloth>, ["> 4.2.6"])
     else
-      s.add_dependency(%q<rails>, ["~> 2"])
-      s.add_dependency(%q<jrails>, [">= 0"])
-      s.add_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
-      s.add_dependency(%q<jakewendt-rails_extension>, [">= 0"])
-      s.add_dependency(%q<jakewendt-simply_authorized>, [">= 0"])
-      s.add_dependency(%q<ssl_requirement>, [">= 0"])
-      s.add_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-      s.add_dependency(%q<RedCloth>, ["> 4.2.6"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 2"])
-    s.add_dependency(%q<jrails>, [">= 0"])
-    s.add_dependency(%q<jakewendt-ruby_extension>, [">= 0"])
-    s.add_dependency(%q<jakewendt-rails_extension>, [">= 0"])
-    s.add_dependency(%q<jakewendt-simply_authorized>, [">= 0"])
-    s.add_dependency(%q<ssl_requirement>, [">= 0"])
-    s.add_dependency(%q<ryanb-acts-as-list>, [">= 0"])
-    s.add_dependency(%q<RedCloth>, ["> 4.2.6"])
   end
 end
 
