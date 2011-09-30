@@ -61,7 +61,7 @@ class SimplyPagesGenerator < Rails::Generator::Base
 				m.file(f, "app/models/#{File.basename(file)}")
 			}
 
-			m.directory('app/controllers ')
+			m.directory('app/controllers')
 			Dir["#{dot}/templates/controllers/*rb"].each{|file| 
 				f = file.split('/').slice(-2,2).join('/')
 				m.file(f, "app/controllers/#{File.basename(file)}")
