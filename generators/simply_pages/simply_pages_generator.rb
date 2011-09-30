@@ -85,6 +85,12 @@ class SimplyPagesGenerator < Rails::Generator::Base
 				m.file(f, "test/unit/#{File.basename(file)}")
 			}
 
+			m.directory('config/initializers')
+			Dir["#{dot}/templates/initializers/*rb"].each{|file| 
+				f = file.split('/').slice(-2,2).join('/')
+				m.file(f, "config/initializers/#{File.basename(file)}")
+			}
+
 		end
 	end
 
